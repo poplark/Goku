@@ -16,6 +16,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.json', '.jsx'],
+        alias: {
+            'goku': path.resolve(rootPath, 'src/index.jsx'),
+        } ,
     },
     module: {
         rules: [
