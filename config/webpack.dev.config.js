@@ -15,6 +15,7 @@ module.exports = {
         chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     },
     resolve: {
+        modules: ['node_modules'],
         extensions: ['.js', '.json', '.jsx'],
         alias: {
             'goku': path.resolve(rootPath, 'src/index.jsx'),
@@ -26,6 +27,7 @@ module.exports = {
                 test: /\.(js|jsx|mjs)$/,
                 enforce: 'pre',
                 loader: require.resolve('eslint-loader'),
+                include: [path.resolve(rootPath, 'src'), path.resolve(examplePath, 'example/js')],
                 options: {
                     eslintPath: require.resolve('eslint'),
                     configFile: path.resolve(rootPath, '.eslintrc')
@@ -33,15 +35,18 @@ module.exports = {
             }, {
                 oneOf: [
                     {
+                        test: /\.ejs$/,
+                        use: [
+                            {
+                                loader: require.resolve('ejs-loader'),
+                                options: {
+                                    // variable: 'website',
+                                }
+                            },
+                        ]
+                    }, {
                         test: /.jsx?$/,
                         loader: require.resolve('babel-loader'),
-                        options: {
-                            compact: true,
-                            presets: [
-                                'env',
-                                'react'
-                            ],
-                        },
                     }, {
                         test: /.(css|less)$/,
                         use: [
@@ -55,15 +60,18 @@ module.exports = {
                                 loader: require.resolve('less-loader')
                             }
                         ]
-                    }
+                    },
                 ]
             }
         ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            inject: true,
-            template: path.resolve(examplePath, 'index.html'),
+            template: path.resolve(examplePath, 'index.ejs'),
+            website: {
+                title: 'Goku Example',
+                description: 'Goku library of react with its\' styles'
+            }
         }),
     ]
 }
