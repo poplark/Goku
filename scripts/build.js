@@ -1,6 +1,8 @@
 const webpack = require('webpack');
 
-const config = require('../config/webpack.dev.config');
+const config = require('../config/webpack.config');
+
+config.mode = 'production';
 
 const webpackBuild = (config) => {
     let compiler = webpack(config);

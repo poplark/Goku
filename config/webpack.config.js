@@ -6,12 +6,12 @@ const rootPath = path.resolve(__dirname, '../'),
     examplePath = path.resolve(rootPath, 'example');
 
 module.exports = {
-    entry: {
-        index: path.resolve(examplePath, 'js/index.jsx')
-    },
+    entry: [
+        path.resolve(examplePath, 'js/index.jsx')
+    ],
     output: {
         path: path.resolve(rootPath, 'dist'),
-        filename: 'static/js/[name].[chunkhash:8].js',
+        filename: 'static/js/[name].[hash:8].js',
         chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
     },
     resolve: {
