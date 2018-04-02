@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import omit from 'omit.js';
+import Icon from '../icon';
 
 export const ButtonType = ['primary', 'dashed', 'danger'];
 export const ButtonShape = ['cirle', 'circle-outline'];
@@ -105,7 +106,7 @@ export default class Button extends Component {
             [`${prefixCls}-clicked`]: clicked
         })
         const iconType = loading ? 'loading' : icon;
-        const iconNode = iconType ? <span type={iconType}/> : null;
+        const iconNode = iconType ? <Icon type={iconType}/> : null;
 
         return (
             <ComponentProp

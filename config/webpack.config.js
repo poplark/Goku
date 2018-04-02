@@ -19,7 +19,7 @@ module.exports = {
         modules: ['node_modules'],
         extensions: ['.js', '.json', '.jsx'],
         alias: {
-            'goku': path.resolve(rootPath, 'src/index.jsx'),
+            'goku': path.resolve(rootPath, 'src'),
         } ,
     },
     module: {

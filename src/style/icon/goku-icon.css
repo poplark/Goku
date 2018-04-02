@@ -1,0 +1,69 @@
+@font-face {
+    font-family: "goku-icon";
+    src: url('../fonts/goku-icon.eot');
+    src: url('../fonts/goku-icon.eot?#iefix') format('eot'),
+    url('../fonts/goku-icon.woff2') format('woff2'),
+    url('../fonts/goku-icon.woff') format('woff'),
+    url('../fonts/goku-icon.ttf') format('truetype'),
+    url('../fonts/goku-icon.svg#goku-icon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.goku-icon:before {
+    display: inline-block;
+    font-family: "goku-icon";
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.goku-icon-lg {
+    font-size: 1.3333333333333333em;
+    line-height: 0.75em;
+    vertical-align: -15%;
+}
+
+.goku-icon-2x {
+    font-size: 2em;
+}
+
+.goku-icon-3x {
+    font-size: 3em;
+}
+
+.goku-icon-4x {
+    font-size: 4em;
+}
+
+.goku-icon-5x {
+    font-size: 5em;
+}
+
+.goku-icon-fw {
+    width: 1.2857142857142858em;
+    text-align: center;
+}
+
+
+    .goku-icon-node-web:before {
+        content: "\EA01"
+    }
+
+    .goku-icon-refresh:before {
+        content: "\EA02"
+    }
+
+    .goku-icon-reload:before {
+        content: "\EA03"
+    }
+
+    .goku-icon-repeat:before {
+        content: "\EA04"
+    }
+
+    .goku-icon-settings:before {
+        content: "\EA05"
+    }
