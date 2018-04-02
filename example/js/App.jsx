@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import HOC from './components/hoc';
+import ButtonExample from './components/button';
 
 export default class App extends Component {
     render() {
@@ -8,6 +9,7 @@ export default class App extends Component {
             <div>
                 <h1>Goku</h1>
                 <HOC/>
+                <ButtonExample/>
             </div>
         )
     }
