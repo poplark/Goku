@@ -67,3 +67,27 @@
     .goku-icon-settings:before {
         content: "\EA05"
     }
+
+    .goku-icon-search:before {
+        content: "\EA06"
+    }
+
+    .goku-icon-arrow-down:before {
+        content: "\EA07"
+    }
+
+    .goku-icon-arrow-left:before {
+        content: "\EA08"
+    }
+
+    .goku-icon-arrow-right:before {
+        content: "\EA09"
+    }
+
+    .goku-icon-arrow-up:before {
+        content: "\EA0A"
+    }
+
+    .goku-icon-upload:before {
+        content: "\EA0B"
+    }

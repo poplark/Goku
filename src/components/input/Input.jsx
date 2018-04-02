@@ -13,36 +13,39 @@ function fixControlledValue(value) {
     return value;
 }
 
+export const InputPropTypes = {
+    prefixCls: PropTypes.string,
+    type: PropTypes.string,
+    className: PropTypes.string,
+    id: PropTypes.oneOf([PropTypes.number, PropTypes.string]),
+    name: PropTypes.string,
+    disabled: PropTypes.bool,
+    readOnly: PropTypes.bool,
+    placeholder: PropTypes.string,
+
+    size: PropTypes.oneOf(InputSize),
+    wSize: PropTypes.oneOf(InputWSize),
+    defaultValue: PropTypes.any,
+    value: PropTypes.any,
+
+    addonBefore: PropTypes.node,
+    addonAfter: PropTypes.node,
+    prefix: PropTypes.node,
+    suffix: PropTypes.node,
+
+    // action handlers
+    onClick: PropTypes.func,
+    onPressEnter: PropTypes.func,
+    onKeyDown: PropTypes.func,
+    onKeyUp: PropTypes.func,
+    onChange: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
+}
+
 export default class Input extends Component {
-    static propTypes = {
-        prefixCls: PropTypes.string,
-        type: PropTypes.string,
-        className: PropTypes.string,
-        id: PropTypes.oneOf([PropTypes.number, PropTypes.string]),
-        name: PropTypes.string,
-        disabled: PropTypes.bool,
-        readOnly: PropTypes.bool,
-        placeholder: PropTypes.string,
+    static propTypes = Object.assign({}, InputPropTypes)
 
-        size: PropTypes.oneOf(InputSize),
-        wSize: PropTypes.oneOf(InputWSize),
-        defaultValue: PropTypes.any,
-        value: PropTypes.any,
-
-        addonBefore: PropTypes.node,
-        addonAfter: PropTypes.node,
-        prefix: PropTypes.node,
-        suffix: PropTypes.node,
-
-        // action handlers
-        onClick: PropTypes.func,
-        onPressEnter: PropTypes.func,
-        onKeyDown: PropTypes.func,
-        onKeyUp: PropTypes.func,
-        onChange: PropTypes.func,
-        onFocus: PropTypes.func,
-        onBlur: PropTypes.func,
-    }
     static defaultProps = {
         prefixCls: 'goku-input',
         type: 'text',
@@ -57,6 +60,10 @@ export default class Input extends Component {
         this.input.blur();
     }
     */
+
+    get value() {
+        return this.input.value;
+    }
 
     handleKeyDown = e => {
         const { onPressEnter, onKeyDown } = this.props;
