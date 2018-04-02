@@ -97,14 +97,14 @@ export default class Button extends Component {
                 break;
         }
         const ComponentProp = others.href ? 'a' : 'button';
-        const classes = classNames(prefixCls, className, {
+        const classes = classNames(prefixCls, {
             [`${prefixCls}-${type}`]: type,
             [`${prefixCls}-${shape}`]: shape,
             [`${prefixCls}-${sizeCls}`]: sizeCls,
             [`${prefixCls}-icon-only`]: !children && icon,
             [`${prefixCls}-loading`]: loading,
             [`${prefixCls}-clicked`]: clicked
-        })
+        }, className);
         const iconType = loading ? 'loading' : icon;
         const iconNode = iconType ? <Icon type={iconType}/> : null;
 

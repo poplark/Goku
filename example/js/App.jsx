@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import HOC from './components/hoc';
 import ButtonExample from './components/button';
 import IconExample from './components/icon';
+import InputExample from './components/input';
 
 export default class App extends Component {
     render() {
@@ -12,6 +13,7 @@ export default class App extends Component {
                 <HOC/>
                 <IconExample/>
                 <ButtonExample/>
+                <InputExample/>
             </div>
         )
     }

@@ -17,10 +17,10 @@ export default class Icon extends Component {
 
     render() {
         const { prefixCls, type, className, spin } = this.props;
-        const classes = classNames(prefixCls, className, {
+        const classes = classNames(prefixCls, {
             [`${prefixCls}-spin`]: !!spin || type === 'loading',
             [`${prefixCls}-${type}`]: true
-        });
+        }, className);
         return (
             <i {...omit(this.props, ['prefixCls', 'type', 'spin'])} className={classes}/>
         )
