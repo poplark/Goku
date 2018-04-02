@@ -23,6 +23,12 @@ export default class Inputs extends Component {
             inputValue: null
         })
     }
+    handlePressEnter = e => {
+        console.log(e.keyCode);
+        this.setState({
+            inputValue: null
+        })
+    }
 
     render() {
         let reloadIcon = <Icon type="reload"/>;
@@ -32,8 +38,17 @@ export default class Inputs extends Component {
         return (
             <div>
                 <Input placeholder="text"
-                    value={inputValue}
+                    defaultValue="test"
                     prefix={reloadIcon}
+                    onClick={this.handleClick}
+                    onChange={this.handleChange}/>
+                <Input placeholder="text"
+                    autoFocus={true}
+                    value={inputValue}
+                    onPressEnter={this.handlePressEnter}
+                    onChange={this.handleChange}/>
+                <Input type="password" placeholder="text"
+                    value={inputValue}
                     onClick={this.handleClick}
                     onChange={this.handleChange}/>
                 <Input placeholder="text"

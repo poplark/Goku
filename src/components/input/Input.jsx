@@ -49,23 +49,22 @@ export default class Input extends Component {
         disabled: false,
     }
 
-    constructor(props) {
-        super(props);
-        let { defaultValue, value } = props;
-        this.state = {
-            value: defaultValue || value || ''
-        }
+    /*
+    focus() {
+        this.input.focus();
     }
+    blur() {
+        this.input.blur();
+    }
+    */
 
-    componentDidMount() {
-    }
-    componentWillReceiveProps(nextProps) {
-        let oldValue = this.props.value;
-        let { value } = nextProps;
-        if(oldValue !== value) {
-            this.setState({
-                value: value || ''
-            })
+    handleKeyDown = e => {
+        const { onPressEnter, onKeyDown } = this.props;
+        if(e.keyCode === 13 && onPressEnter) {
+            onPressEnter(e);
+        }
+        if(onKeyDown) {
+            onKeyDown(e);
         }
     }
 
