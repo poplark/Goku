@@ -91,3 +91,331 @@
     .goku-icon-upload:before {
         content: "\EA0B"
     }
+
+    .goku-icon-align-center:before {
+        content: "\EA0C"
+    }
+
+    .goku-icon-align-justify:before {
+        content: "\EA0D"
+    }
+
+    .goku-icon-align-left:before {
+        content: "\EA0E"
+    }
+
+    .goku-icon-align-right:before {
+        content: "\EA0F"
+    }
+
+    .goku-icon-avatar:before {
+        content: "\EA10"
+    }
+
+    .goku-icon-caret-down:before {
+        content: "\EA11"
+    }
+
+    .goku-icon-caret-left:before {
+        content: "\EA12"
+    }
+
+    .goku-icon-caret-right:before {
+        content: "\EA13"
+    }
+
+    .goku-icon-caret-up:before {
+        content: "\EA14"
+    }
+
+    .goku-icon-check:before {
+        content: "\EA15"
+    }
+
+    .goku-icon-checkbox-ed:before {
+        content: "\EA16"
+    }
+
+    .goku-icon-checkbox:before {
+        content: "\EA17"
+    }
+
+    .goku-icon-circle-add:before {
+        content: "\EA18"
+    }
+
+    .goku-icon-circle-checked:before {
+        content: "\EA19"
+    }
+
+    .goku-icon-circle-checked-reverse:before {
+        content: "\EA1A"
+    }
+
+    .goku-icon-circle-cross:before {
+        content: "\EA1B"
+    }
+
+    .goku-icon-circle-fill-small:before {
+        content: "\EA1C"
+    }
+
+    .goku-icon-circle-fill:before {
+        content: "\EA1D"
+    }
+
+    .goku-icon-circle-i:before {
+        content: "\EA1E"
+    }
+
+    .goku-icon-circle-mark:before {
+        content: "\EA1F"
+    }
+
+    .goku-icon-circle-mark-reverse:before {
+        content: "\EA20"
+    }
+
+    .goku-icon-circle-minus:before {
+        content: "\EA21"
+    }
+
+    .goku-icon-circle-play:before {
+        content: "\EA22"
+    }
+
+    .goku-icon-circle-plus:before {
+        content: "\EA23"
+    }
+
+    .goku-icon-circle-question-reverse:before {
+        content: "\EA24"
+    }
+
+    .goku-icon-circle-question:before {
+        content: "\EA25"
+    }
+
+    .goku-icon-circle-yes:before {
+        content: "\EA26"
+    }
+
+    .goku-icon-clock:before {
+        content: "\EA27"
+    }
+
+    .goku-icon-cross:before {
+        content: "\EA28"
+    }
+
+    .goku-icon-double-left:before {
+        content: "\EA29"
+    }
+
+    .goku-icon-double-right:before {
+        content: "\EA2A"
+    }
+
+    .goku-icon-down:before {
+        content: "\EA2B"
+    }
+
+    .goku-icon-edit:before {
+        content: "\EA2C"
+    }
+
+    .goku-icon-left:before {
+        content: "\EA2D"
+    }
+
+    .goku-icon-link:before {
+        content: "\EA2E"
+    }
+
+    .goku-icon-list:before {
+        content: "\EA2F"
+    }
+
+    .goku-icon-lock:before {
+        content: "\EA30"
+    }
+
+    .goku-icon-minus:before {
+        content: "\EA31"
+    }
+
+    .goku-icon-net:before {
+        content: "\EA32"
+    }
+
+    .goku-icon-play:before {
+        content: "\EA33"
+    }
+
+    .goku-icon-plus:before {
+        content: "\EA34"
+    }
+
+    .goku-icon-qr-code:before {
+        content: "\EA35"
+    }
+
+    .goku-icon-right:before {
+        content: "\EA36"
+    }
+
+    .goku-icon-square-add:before {
+        content: "\EA37"
+    }
+
+    .goku-icon-square-check:before {
+        content: "\EA38"
+    }
+
+    .goku-icon-square-cross:before {
+        content: "\EA39"
+    }
+
+    .goku-icon-square-minus:before {
+        content: "\EA3A"
+    }
+
+    .goku-icon-square:before {
+        content: "\EA3B"
+    }
+
+    .goku-icon-star:before {
+        content: "\EA3C"
+    }
+
+    .goku-icon-tag:before {
+        content: "\EA3D"
+    }
+
+    .goku-icon-unlock:before {
+        content: "\EA3E"
+    }
+
+    .goku-icon-up:before {
+        content: "\EA3F"
+    }
+
+    .goku-icon-verticle-left:before {
+        content: "\EA40"
+    }
+
+    .goku-icon-verticle-right:before {
+        content: "\EA41"
+    }
+
+    .goku-icon-wechat:before {
+        content: "\EA42"
+    }
+
+    .goku-icon-weibo:before {
+        content: "\EA43"
+    }
+
+    .goku-icon-zoom-in:before {
+        content: "\EA44"
+    }
+
+    .goku-icon-zoom-out:before {
+        content: "\EA45"
+    }
+
+    .goku-icon-ban:before {
+        content: "\EA46"
+    }
+
+    .goku-icon-battery:before {
+        content: "\EA47"
+    }
+
+    .goku-icon-circle-sm:before {
+        content: "\EA48"
+    }
+
+    .goku-icon-circle:before {
+        content: "\EA49"
+    }
+
+    .goku-icon-file-add:before {
+        content: "\EA4A"
+    }
+
+    .goku-icon-file-subtract:before {
+        content: "\EA4B"
+    }
+
+    .goku-icon-file:before {
+        content: "\EA4C"
+    }
+
+    .goku-icon-filter:before {
+        content: "\EA4D"
+    }
+
+    .goku-icon-finance:before {
+        content: "\EA4E"
+    }
+
+    .goku-icon-flag:before {
+        content: "\EA4F"
+    }
+
+    .goku-icon-folder:before {
+        content: "\EA50"
+    }
+
+    .goku-icon-grid:before {
+        content: "\EA51"
+    }
+
+    .goku-icon-image:before {
+        content: "\EA52"
+    }
+
+    .goku-icon-language:before {
+        content: "\EA53"
+    }
+
+    .goku-icon-layout:before {
+        content: "\EA54"
+    }
+
+    .goku-icon-mail:before {
+        content: "\EA56"
+    }
+
+    .goku-icon-loading:before {
+        content: "\EA55"
+    }
+
+    .goku-icon-menu:before {
+        content: "\EA57"
+    }
+
+    .goku-icon-radio-checked:before {
+        content: "\EA58"
+    }
+
+    .goku-icon-radio-unchecked:before {
+        content: "\EA59"
+    }
+
+    .goku-icon-sort:before {
+        content: "\EA5A"
+    }
+
+    .goku-icon-telephone:before {
+        content: "\EA5B"
+    }
+
+    .goku-icon-toggle:before {
+        content: "\EA5C"
+    }
+
+    .goku-icon-trash:before {
+        content: "\EA5D"
+    }

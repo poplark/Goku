@@ -24,7 +24,12 @@ export default class Search extends Component {
         if(this.props.disabled) {
             return e.stopPropagation();
         }
-        let value = this.input.value; // value's getter, or can use this.input.input.value - ref
+        // `this.input.value` will invoke the value getter of Input component
+        let value = this.input.value;
+        // or you can use `this.input.input.value` to get value from the input HtmlElement
+        // - because the `input` is a memeber of Input component (this.input),
+        // - and it's the reference of the input HtmlElement of Input component
+        // let value = this.input.input.value;
         this.props.onSearch && this.props.onSearch(value);
     }
 
