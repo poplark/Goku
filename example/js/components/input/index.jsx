@@ -31,6 +31,7 @@ export default class Inputs extends Component {
     }
     handleSearch = val => {
         console.log('search', val)
+        this.inputSearch.select();
     }
 
     render() {
@@ -71,6 +72,7 @@ export default class Inputs extends Component {
                         defaultValue="test"
                         onSearch={this.handleSearch}/>
                     <Input.Search placeholder="text"
+                        ref={ref=>this.inputSearch=ref}
                         defaultValue="test"
                         onSearch={this.handleSearch}
                         enterButton={true}/>

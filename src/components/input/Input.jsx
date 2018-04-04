@@ -52,14 +52,15 @@ export default class Input extends Component {
         disabled: false,
     }
 
-    /*
     focus() {
         this.input.focus();
     }
     blur() {
         this.input.blur();
     }
-    */
+    select() {
+        this.input.select();
+    }
 
     get value() {
         return this.input.value;

@@ -8,11 +8,11 @@ import Icon from '../icon';
 import Button from '../button';
 
 export default class Search extends Component {
-    static propTypes = Object.assign({
+    static propTypes = Object.assign({}, InputPropTypes, {
         inputPrefixCls: PropTypes.string,
         enterButton: PropTypes.oneOfType([PropTypes.bool, PropTypes.node]),
         onSearch: PropTypes.func
-    }, InputPropTypes)
+    })
 
     static defaultProps = {
         inputPrefixCls: 'goku-input',
@@ -20,6 +20,15 @@ export default class Search extends Component {
         enterButton: false
     }
 
+    focus() {
+        this.input.focus();
+    }
+    blur() {
+        this.input.blur();
+    }
+    select() {
+        this.input.select();
+    }
     handleSearch = e => {
         if(this.props.disabled) {
             return e.stopPropagation();
@@ -31,6 +40,7 @@ export default class Search extends Component {
         // - and it's the reference of the input HtmlElement of Input component
         // let value = this.input.input.value;
         this.props.onSearch && this.props.onSearch(value);
+        this.input.focus();
     }
 
     render() {
