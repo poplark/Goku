@@ -5,7 +5,8 @@ export default class Inputs extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            inputValue: null
+            inputValue: null,
+            inputNumber: 2
         }
     }
     handleClick = e => {
@@ -34,10 +35,17 @@ export default class Inputs extends Component {
         this.inputSearch.select();
     }
 
+    handleNumberChange = val => {
+        console.log('number changed ', val, ' type: ', typeof val);
+        this.setState({
+            inputNumber: val
+        })
+    }
+
     render() {
         let reloadIcon = <Icon type="reload"/>;
         let refreshIcon = <Icon type="refresh" onClick={this.handleRefresh}/>;
-        let { inputValue } = this.state;
+        let { inputValue, inputNumber } = this.state;
 
         return (
             <div>
@@ -76,6 +84,12 @@ export default class Inputs extends Component {
                         defaultValue="test"
                         onSearch={this.handleSearch}
                         enterButton={true}/>
+                </div>
+                <div>
+                    <h4>Input.Number</h4>
+                    <Input.Number defaultValue={1}
+                        value={inputNumber}
+                        onChange={this.handleNumberChange}/>
                 </div>
             </div>
         )
