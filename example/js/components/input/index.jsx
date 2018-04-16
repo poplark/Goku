@@ -49,7 +49,9 @@ export default class Inputs extends Component {
 
         return (
             <div>
+                <h2>Input</h2>
                 <div>
+                    <h3>Input</h3>
                     <Input placeholder="text"
                         defaultValue="test"
                         prefix={reloadIcon}
@@ -76,6 +78,7 @@ export default class Inputs extends Component {
                         onChange={this.handleChange}/>
                 </div>
                 <div>
+                    <h3>Input.Search</h3>
                     <Input.Search placeholder="text"
                         defaultValue="test"
                         onSearch={this.handleSearch}/>
@@ -86,7 +89,7 @@ export default class Inputs extends Component {
                         enterButton={true}/>
                 </div>
                 <div>
-                    <h4>Input.Number</h4>
+                    <h3>Input.Number</h3>
                     <Input.Number defaultValue={1}
                         value={inputNumber} min={-10} max={10}
                         onChange={this.handleNumberChange}/>
