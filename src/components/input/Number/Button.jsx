@@ -13,7 +13,6 @@ export default class InputNumberButton extends Component {
         onSubtractStep: PropTypes.func,
     }
     static defaultProps = {
-        prefixCls: 'goku-input-inner-btn',
     }
 
     constructor(props) {

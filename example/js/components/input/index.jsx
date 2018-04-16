@@ -92,6 +92,7 @@ export default class Inputs extends Component {
                     <h3>Input.Number</h3>
                     <Input.Number defaultValue={1}
                         value={inputNumber} min={-10} max={10}
+                        suffix={<span>-10 ~ 10</span>}
                         onChange={this.handleNumberChange}/>
                 </div>
             </div>
