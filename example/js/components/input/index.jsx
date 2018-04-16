@@ -6,7 +6,7 @@ export default class Inputs extends Component {
         super(props);
         this.state = {
             inputValue: null,
-            inputNumber: 2
+            inputNumber: 20
         }
     }
     handleClick = e => {
@@ -88,7 +88,7 @@ export default class Inputs extends Component {
                 <div>
                     <h4>Input.Number</h4>
                     <Input.Number defaultValue={1}
-                        value={inputNumber}
+                        value={inputNumber} min={-10} max={10}
                         onChange={this.handleNumberChange}/>
                 </div>
             </div>
