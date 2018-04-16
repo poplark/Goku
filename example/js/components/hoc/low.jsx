@@ -6,7 +6,10 @@ import High from './high';
 export default class Low extends Component {
     render() {
         return (
-            <h1>low component</h1>
+            <div>
+                <h2>HOC</h2>
+                <p>Use decorator on HOC</p>
+            </div>
         )
     }
 }
