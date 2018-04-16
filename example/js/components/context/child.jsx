@@ -5,7 +5,7 @@ export default class Child extends Component {
     constructor(props, context) {
         super(props);
 
-        console.log('ccccc', props, context);
+        console.log('child', props, context, Consumer);
     }
 
     render() {

@@ -4,21 +4,15 @@ import Middle from './middle';
 
 export default class Parent extends Component {
     constructor(props, context) {
-        console.log('pppp', props, context);
+        console.log('parent', props, context, Provider);
         super(props);
         this.state = {
             group: {
                 name: 'default',
-                // id: 1
             }
         }
     }
 
-    handleAdd = () => {
-        let { group } = this.state;
-        group.id += 1;
-        this.setState({group});
-    }
     handleChange = e => {
         let value = e.target.value;
         let { group } = this.state;
@@ -32,7 +26,7 @@ export default class Parent extends Component {
         return (
             <div>
                 <h2>Context - react 16.3</h2>
-                <Provider value={{group: group, onChange: this.handleChange}}>
+                <Provider value={{group, onChange: this.handleChange}}>
                     <div style={{padding: '0 16px 16px 16px', border: '1px solid #eee'}}>
                         <h3>parent</h3>
                         <div>
