@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import omit from 'omit.js';
 
-import { getPrecision } from '../../utils/precision';
-import Input, { InputPropTypes } from './Input';
-import Icon from '../icon';
-import Button from '../button';
+import { getPrecision } from '../../../utils/precision';
+import Input, { InputPropTypes } from '../Input';
+import InputNumberButton from './Button';
 
 /**
  * When click and hold on a button - the speed of auto changin the value.
@@ -20,6 +19,7 @@ const DELAY = 600;
 
 export default class InputNumber extends Component {
     static propTypes = Object.assign({}, InputPropTypes, {
+        inputPrefixCls: PropTypes.string,
         min: PropTypes.number,
         max: PropTypes.number,
         step: PropTypes.number,
@@ -31,6 +31,7 @@ export default class InputNumber extends Component {
     })
 
     static defaultProps = {
+        inputPrefixCls: 'goku-input',
         prefixCls: 'goku-input-number',
         min: -Infinity,
         max: Infinity,
@@ -143,7 +144,14 @@ export default class InputNumber extends Component {
         }
     }
     componentWillUnmount() {
-        // clear timer
+        this.stop();
+    }
+    componentDidUpdate(preProps, preState) {
+        // TODO - persist focused when click the add button
+        // let { focused } = this.state;
+        // if(focused) {
+        //     this.focus();
+        // }
     }
 
     get value() {
@@ -158,8 +166,10 @@ export default class InputNumber extends Component {
         return result;
     }
 
-    addStep(val) {
-        const { step, max } = this.props;
+    addStep() {
+        const { step, max, value } = this.props;
+        let val = this.getValidValue(value);
+
         const precisionFactor = this.getPrecisionFactor(val);
         let num = this.toNumber(val);
         let result = (num * precisionFactor + step * precisionFactor) / precisionFactor;
@@ -168,8 +178,10 @@ export default class InputNumber extends Component {
         }
         return result;
     }
-    subtractStep(val) {
-        const { step, min } = this.props;
+    subtractStep() {
+        const { step, min, value } = this.props;
+        let val = this.getValidValue(value);
+
         const precisionFactor = this.getPrecisionFactor(val);
         let num = this.toNumber(val);
         let result = (num * precisionFactor - step * precisionFactor) / precisionFactor;
@@ -179,6 +191,49 @@ export default class InputNumber extends Component {
         return result;
     }
 
+    handleAddStep = recursive => {
+        // click add button, or press up key
+        const { formatter, onChange } = this.props;
+        let { inputValue } = this.state;
+        let newInputValue = this.addStep();
+        let newViewValue = this.getViewValue(newInputValue, formatter);
+        if(inputValue === newInputValue) {
+            // do nothing - exceed the max
+        } else {
+            onChange && onChange(newInputValue);
+            this.setState({
+                inputValue: newInputValue,
+                viewValue: newViewValue
+            });
+            this.autoStepTimer = setTimeout(() => {
+                this.handleAddStep(true);
+            }, recursive ? SPEED : DELAY);
+        }
+    }
+    handleSubtractStep = recursive => {
+        // click subtract button, or press down key
+        const { formatter, onChange } = this.props;
+        let { inputValue } = this.state;
+        let newInputValue = this.subtractStep();
+        let newViewValue = this.getViewValue(newInputValue, formatter);
+        if(inputValue === newInputValue) {
+            // do nothing - exceed the min
+        } else {
+            onChange && onChange(newInputValue);
+            this.setState({
+                inputValue: newInputValue,
+                viewValue: newViewValue
+            });
+            this.autoStepTimer = setTimeout(() => {
+                this.handleSubtractStep(true);
+            }, recursive ? SPEED : DELAY);
+        }
+    }
+    stop = () => {
+        if(this.autoStepTimer) {
+            clearTimeout(this.autoStepTimer);
+        }
+    }
     handleChange = e => {
         let val = e.target.value;
         const { parser, formatter, onChange } = this.props;
@@ -195,6 +250,12 @@ export default class InputNumber extends Component {
             inputValue,
             viewValue
         });
+    }
+    handleFocus = e => {
+        // this.setState({
+        //     focused: true
+        // });
+        this.props.onFocus && this.props.onFocus(e);
     }
     handleBlur = e => {
         let val = this.input.value;
@@ -218,28 +279,82 @@ export default class InputNumber extends Component {
         onBlur && onBlur(e);
     }
     handleKeyDown = e => {
+        e.preventDefault();
+        if (e.keyCode === 38) {
+            this.handleAddStep();
+            this.stop();
+        } else if (e.keyCode === 40) {
+            this.handleSubtractStep();
+            this.stop();
+        }
     }
     handleKeyUp = e => {
+        e.preventDefault();
+        this.stop();
     }
 
-    renderInput() {
-        const props = this.props;
-        const { viewValue, value } = this.state;
-
+    renderAddBtn() {
+        const { disabled, max } = this.props;
+        let { inputValue } = this.state;
+        let isDisabled = false;
+        if(disabled) {
+            isDisabled = true;
+        }
+        if(this.addStep() === max && inputValue >= max) {
+            // exceed the max
+            isDisabled = true;
+        }
         return (
-            <Input ref={ref=>this.input=ref}
-                value={viewValue}
-                onChange={this.handleChange}
-                onBlur={this.handleBlur}/>
+            <InputNumberButton disabled={isDisabled}
+                onAddStep={this.handleAddStep}
+                onStopStep={this.stop}/>
         )
     }
-    renderAddBtn() {
-    }
     renderSubtractBtn() {
+        const { disabled, min } = this.props;
+        let { inputValue } = this.state;
+        let isDisabled = false;
+        if(disabled) {
+            isDisabled = true;
+        }
+        if(this.subtractStep() === min && inputValue <= min) {
+            // exceed the min
+            isDisabled = true;
+        }
+        return (
+            <InputNumberButton disabled={isDisabled}
+                onSubtractStep={this.handleSubtractStep}
+                onStopStep={this.stop}/>
+        )
     }
     render() {
-        const { prefix, suffix } = this.props;
+        const { className, prefixCls, inputPrefixCls, suffix, ...others } = this.props;
+        const { viewValue } = this.state;
 
-        return this.renderInput();
+        let classes = classNames(prefixCls, className);
+
+        let newSuffix = (
+            <React.Fragment>
+                {suffix}
+                <div className={`${prefixCls}-handler`}>
+                    {this.renderAddBtn()}
+                    {this.renderSubtractBtn()}
+                </div>
+            </React.Fragment>
+        )
+
+        return (
+            <Input {...omit(others, ['formatter', 'parser'])}
+                className={classes}
+                prefixCls={inputPrefixCls}
+                ref={ref=>this.input=ref}
+                value={viewValue}
+                suffix={newSuffix}
+                onChange={this.handleChange}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                onKeyDown={this.handleKeyDown}
+                onKeyUp={this.handleKeyUp}/>
+        )
     }
 }
