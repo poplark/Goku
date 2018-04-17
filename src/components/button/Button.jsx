@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { findDOMNode } from 'react-dom';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'unique-classnames';
 import omit from 'omit.js';
 import Icon from '../icon';
 

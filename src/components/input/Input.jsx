@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import classNames from 'unique-classnames';
 import omit from 'omit.js';
 
 export const InputSize = ['small', 'large'];
