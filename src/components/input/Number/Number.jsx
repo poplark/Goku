@@ -62,7 +62,7 @@ export default class InputNumber extends Component {
         if(value !== props.value) {
             props.onChange && props.onChange(value);
         }
-        const { formatter, parser } = this.props;
+        const { formatter } = this.props;
         this.state = {
             viewValue: this.getViewValue(value, formatter),
             inputValue: value
@@ -131,7 +131,7 @@ export default class InputNumber extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        let { value, formatter, parser } = nextProps;
+        let { value, formatter } = nextProps;
         if(value !== this.props.value) {
             let validValue = this.getValidValue(value);
             if(value !== validValue) {
@@ -155,7 +155,7 @@ export default class InputNumber extends Component {
     }
 
     get value() {
-        const { parser, value, onBlur } = this.props;
+        const { parser, value } = this.props;
         let result;
         let inputValue = this.getInputValue(this.input.value, parser);
         if(this.isInvalidInput(inputValue)) {

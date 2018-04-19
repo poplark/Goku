@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'unique-classnames';
 
-import Button, { ButtonType, ButtonShape, ButtonSize } from './Button';
+import Button, { ButtonSize } from './Button';
 
 export default class Group extends Component {
     static propTypes = {

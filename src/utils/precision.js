@@ -1,3 +1,7 @@
+/*
+ * 自动判断数值的精度
+ * get precision automatically
+ */
 export function getPrecision(value) {
     const valueString = value.toString();
     if(valueString.indexOf('e-') >= 0) {

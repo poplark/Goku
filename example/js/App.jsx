@@ -5,6 +5,7 @@ import Context from './components/context';
 import ButtonExample from './components/button';
 import IconExample from './components/icon';
 import InputExample from './components/input';
+import TooltipExample from './components/tooltip';
 
 export default class App extends Component {
     render() {
@@ -16,6 +17,7 @@ export default class App extends Component {
                 <IconExample/>
                 <ButtonExample/>
                 <InputExample/>
+                <TooltipExample/>
             </div>
         )
     }

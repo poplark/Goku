@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'unique-classnames';
-import omit from 'omit.js';
 
 import Button from '../../button';
 
@@ -35,7 +33,7 @@ export default class InputNumberButton extends Component {
     }
 
     render() {
-        const { className, onAddStep, onSubtractStep, onStopStep, ...others } = this.props;
+        const { onAddStep, onSubtractStep, onStopStep, ...others } = this.props;
 
         let icon;
         if(onAddStep) {

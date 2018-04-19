@@ -92,7 +92,7 @@ export default class Input extends Component {
         return sizeCls;
     }
     getInputClassName() {
-        const { prefixCls, type, size, wSize, className, disabled } = this.props;
+        const { prefixCls, type, disabled } = this.props;
 
         let sizeCls = this.getSizeCls();
         return classNames(prefixCls, {
@@ -151,7 +151,7 @@ export default class Input extends Component {
         )
     }
     renderAddonWrapper(children) {
-        const { prefixCls, addonBefore, addonAfter, className, size, style } = this.props;
+        const { prefixCls, addonBefore, addonAfter, className, style } = this.props;
         if(!addonBefore && !addonAfter) {
             return children;
         }
