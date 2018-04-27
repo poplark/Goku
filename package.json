@@ -40,6 +40,7 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
+    "@antv/g2": "^3.0.8",
     "omit.js": "^1.0.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
