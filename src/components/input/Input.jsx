@@ -47,7 +47,7 @@ export default class Input extends Component {
     static propTypes = Object.assign({}, InputPropTypes)
 
     static defaultProps = {
-        prefixCls: 'goku-input',
+        prefixCls: 'g-input',
         type: 'text',
         disabled: false,
     }

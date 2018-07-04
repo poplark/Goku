@@ -10,7 +10,7 @@ export default class Icon extends Component {
         spin: PropTypes.bool,
     }
     static defaultProps = {
-        prefixCls: 'goku-icon',
+        prefixCls: 'g-icon',
         type: '',
         spin: false
     }

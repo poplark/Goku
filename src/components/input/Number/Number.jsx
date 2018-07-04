@@ -31,8 +31,8 @@ export default class InputNumber extends Component {
     })
 
     static defaultProps = {
-        inputPrefixCls: 'goku-input',
-        prefixCls: 'goku-input-number',
+        inputPrefixCls: 'g-input',
+        prefixCls: 'g-input-number',
         min: -Infinity,
         max: Infinity,
         step: 1,

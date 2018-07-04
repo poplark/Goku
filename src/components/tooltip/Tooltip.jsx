@@ -22,7 +22,7 @@ export default class Tooltip extends Component {
         display: PropTypes.bool,
     }
     static defaultProps = {
-        prefixCls: 'goku-tooltip',
+        prefixCls: 'g-tooltip',
         trigger: 'hover',
     }
     constructor(props) {

@@ -12,6 +12,7 @@
 @font-xxxlg: 30px;
 
 @font-prefix-cls: ~"@{goku-prefix}-font";
+@line-height-prefix-cls: ~"@{goku-prefix}-line-height";
 
 .@{font-prefix-cls}-xxs {
   font-size: @font-xxs;
@@ -159,7 +160,7 @@
   text-overflow: ellipsis;
 }
 
-.u-line-height {
+.@{line-height-prefix-cls} {
   line-height: 22px;
 
   &-force {
@@ -167,7 +168,7 @@
   }
 }
 
-.u-line-height--lg {
+.@{line-height-prefix-cls}--lg {
   line-height: 28px;
 
   &-force {

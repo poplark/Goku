@@ -35,7 +35,7 @@ export default class Button extends Component {
     }
 
     static defaultProps = {
-        prefixCls: 'goku-btn',
+        prefixCls: 'g-btn',
         loading: false,
     }
 

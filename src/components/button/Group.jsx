@@ -15,7 +15,7 @@ export default class Group extends Component {
         className: PropTypes.string,
     }
     static defaultProps = {
-        prefixCls: 'goku-btn-group',
+        prefixCls: 'g-btn-group',
         leftGap: 0,
         rightGap: 0
     }

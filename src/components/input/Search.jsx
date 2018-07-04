@@ -15,8 +15,8 @@ export default class Search extends Component {
     })
 
     static defaultProps = {
-        inputPrefixCls: 'goku-input',
-        prefixCls: 'goku-input-search',
+        inputPrefixCls: 'g-input',
+        prefixCls: 'g-input-search',
         enterButton: false
     }
 

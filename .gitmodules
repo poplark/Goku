@@ -1,0 +1,3 @@
+[submodule "src/style/iconfont"]
+	path = src/style/iconfont
+	url = git@github.com:poplark/svg2iconfont.git
