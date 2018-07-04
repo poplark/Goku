@@ -2,11 +2,13 @@
   "name": "goku",
   "version": "0.0.1",
   "description": "Goku components",
-  "main": "index.js",
+  "main": "lib/goku.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js"
+    "build:normal": "node scripts/build.js",
+    "build:minify": "MINIFY=true node scripts/build.js",
+    "build": "npm run build:normal && npm run build:minify"
   },
   "keywords": [
     "style"
@@ -28,6 +30,7 @@
     "eslint": "^4.18.2",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-react": "^7.7.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
     "glob": "^7.1.2",
     "html-webpack-plugin": "^3.0.6",
@@ -35,6 +38,7 @@
     "less-loader": "^4.1.0",
     "postcss-flexbugs-fixes": "^3.3.0",
     "postcss-loader": "^2.1.1",
+    "react-router-dom": "^4.2.2",
     "style-loader": "^0.20.3",
     "webpack": "^4.3.0",
     "webpack-dev-server": "^3.1.1"
@@ -45,7 +49,6 @@
     "omit.js": "^1.0.0",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
-    "react-router-dom": "^4.2.2",
     "unique-classnames": "^1.0.3"
   }
 }

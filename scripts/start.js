@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const webpackDevServer = require('webpack-dev-server');
 
 const config = require('../config/webpack.config');
-// env mode
-config.mode = 'development';
 
 // HMR
 const HOST = 'localhost';

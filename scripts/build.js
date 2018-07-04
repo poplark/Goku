@@ -1,20 +1,24 @@
 const webpack = require('webpack');
 
-const config = require('../config/webpack.config');
-
-config.mode = 'production';
+let config;
+if(process.env.MINIFY) {
+    config = require('../config/webpack.config.prod')(true);
+    config['mode'] = 'production';
+} else {
+    config = require('../config/webpack.config.prod')(false);
+    config['mode'] = 'none';
+}
 
 const webpackBuild = (config) => {
     let compiler = webpack(config);
     compiler.run((err, stats) => {
         if(err) {
-            return console.log(err);
+            return console.error(err);
         }
         if(stats.compilation.errors.length > 0) {
             return console.error(stats.compilation.errors);
         }
-        console.log(stats.hash);
-        console.info(`${stats.endTime - stats.startTime} ms`);
+        console.log(stats.toString({colors: true}));
     });
 }
 

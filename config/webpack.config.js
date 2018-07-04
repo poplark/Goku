@@ -7,6 +7,7 @@ const rootPath = path.resolve(__dirname, '../'),
     examplePath = path.resolve(rootPath, 'example');
 
 module.exports = {
+    mode: 'development',
     entry: [
         path.resolve(examplePath, 'js/index.jsx')
     ],
